@@ -35,9 +35,27 @@
     </div>
   </div>
 
-  <div class="offcanvas-footer mx-auto mb-3" (click)="deleteHistoryService()">
-    <button class="btn btn-danger">Borrar Historial</button>
+  <div class="offcanvas-footer">
+
+    <div class="btn-group d-flex" role="group" aria-label="Basic example">
+      <button
+        type="button"
+        class="btn btn-outline-light"
+        id="Boton"
+        *ngFor="let numero of sizeGifs; let i = index"
+        (click)="enviarValor( i )"
+        data-bs-dismiss="offcanvas"
+      >
+      {{numero}}
+    </button>
+    </div>
+
+    <div class="d-flex justify-content-center my-2" (click)="deleteHistoryService()">
+      <button class="btn btn-danger">Borrar Historial</button>
+    </div>
+
   </div>
+
 
 </div>
 

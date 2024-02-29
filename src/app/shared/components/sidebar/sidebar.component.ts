@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { style } from '@angular/animations';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Offcanvas } from 'bootstrap';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
@@ -8,6 +9,8 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+
+  public sizeGifs:number[] = [10, 20, 40, 60];
 
   constructor( private gifsService:GifsService ) {
     const initOffCanvas = Offcanvas;
@@ -23,6 +26,11 @@ export class SidebarComponent {
 
   deleteHistoryService() {
     this.gifsService.deleteHistory();
+  };
+
+  enviarValor( number:number ) {
+    const cantidadGifs = this.sizeGifs[number];
+    this.gifsService.newLimitSearch(cantidadGifs );
   };
 
 }
