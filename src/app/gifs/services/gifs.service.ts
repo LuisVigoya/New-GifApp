@@ -57,7 +57,7 @@ export class GifsService {
       .set('lang', 'es')
       .set('limit', `${this.sizeGifs}`)
       .set('q', tag)
-      .set('rating', 'r')
+      .set('rating', 'g')
 
     this.http.get<SearchResponse>( `${ this.serviceUrl }/search`, { params } )
       .subscribe( resp => {
